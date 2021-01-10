@@ -2,6 +2,10 @@ section {
   overflow: hidden;
 }
 
+app-mobile-nav-menu {
+  display: none;
+}
+
 .header {
   width: 100%;
   max-width: 1110px;
@@ -38,6 +42,10 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
+.mobile-view-logo {
+  display: none;
+}
+
 .phone-number {
   font-weight: 500;
   font-size: 16px;
@@ -52,9 +60,8 @@ section {
 
 .main-block {
   width: 100%;
-  //background-image: url('../../../assets/img/main-page-bg.png');
+  background-image: url('../../../assets/img/main-section-bg.png');
   background-size: cover;
-  background: linear-gradient(277.8deg, rgba(84, 170, 217, 0.92) 0.25%, rgba(69, 181, 133, 0.88) 111.76%) center;
   padding: 0 60px 24px;
   display: block;
 }
@@ -72,6 +79,7 @@ section {
   font-weight: 500;
   font-size: 28px;
   line-height: 34px;
+  font-style: italic;
   text-align: center;
   color: #FFFFFF;
   margin-top: 36px;
@@ -130,6 +138,10 @@ section {
   display: block;
 }
 
+.phone-number-mobile-view {
+  display: none;
+}
+
 .work-time {
   font-weight: 600;
   font-size: 16px;
@@ -153,15 +165,14 @@ section {
   padding-bottom: 90px;
 }
 
-#example1 {
-  //background-image: url(img_flwr.gif), url(paper.gif);
-  background-position: right bottom, left top;
-  background-repeat: no-repeat, repeat;
-}
-
 .how-it-works-title {
   padding-top: 60px;
   padding-bottom: 64px;
+}
+
+.how-it-works-list {
+  overflow-x: scroll;
+  justify-content: center;
 }
 
 .card {
@@ -169,7 +180,8 @@ section {
 }
 
 .card-wrapper {
-  width: 262px;
+  max-width: 262px;
+  min-width: 262px;
   padding: 24px 24px 49px;
   background: #FFFFFF;
   border: 2px solid #EFEFEF;
@@ -239,7 +251,10 @@ section {
 }
 
 .reasons-list {
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
+  //justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .reason-item {
@@ -283,12 +298,30 @@ section {
   padding-bottom: 90px;
 }
 
+.appliance-card-img-wrapper {
+  height: 40px;
+  margin-bottom: 18px;
+}
+
 .appliance-card {
   border: 1.5px solid #EFEFEF;
   border-radius: 15px;
   padding: 22px 15px;
   width: 120px;
-  margin: 0 9px;
+  cursor: pointer;
+  margin: 0 auto;
+
+  &:hover {
+    background: linear-gradient(327.46deg, #54AAD9 -144.44%, #45B585 158.83%);
+  }
+
+  &:hover path {
+    stroke: #fff;
+  }
+
+  &:hover .appliance-title {
+    color: #FFFFFF;
+  }
 }
 
 .appliance-img {
@@ -366,11 +399,13 @@ section {
 // LOCATION
 
 .location {
-  background-image: url('../../../assets/img/location-left-bg.svg');
+  //background-image: url('../../../assets/img/location-left-bg.svg');
   //background-color: linear-gradient(327.46deg, #54AAD9 -144.44%, #45B585 158.83%);
   background-color: #45B585;
   background-repeat: no-repeat;
-  background-position: left top;
+  background-position: center center;
+  background-image: url('../../../assets/img/location-bg.png');
+  position: relative;
 }
 
 .location-title {
@@ -392,6 +427,7 @@ section {
   padding: 0 35px;
   margin-left: 15px;
   cursor: pointer;
+  white-space: nowrap;
 
   &.active {
     background: #FEA520;
@@ -400,8 +436,18 @@ section {
   }
 }
 
-.map {
+.map-container {
+  width: 100%;
+  height: 390px;
+  border-radius: 30px 0px 0px 0px;
+  overflow: hidden;
   margin-top: 24px;
+
+}
+
+.map {
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -486,4 +532,345 @@ section {
   line-height: 15px;
   text-align: center;
   color: #6B717D;
+}
+
+.custom-width {
+  width: 810px;
+  //border: 1px solid red;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 992px) {
+  .custom-width {
+    width: 650px;
+  }
+  .appliances-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .reasons-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .custom-width {
+    width: 560px;
+  }
+  .appliances-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .reasons-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .appliance-card {
+    width: 110px;
+  }
+  .how-it-works-list {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    height: 54px;
+  }
+  app-mobile-nav-menu{
+    display: block;
+  }
+  .main-logo {
+    display: none;
+  }
+  .mobile-view-logo {
+    display: block;
+  }
+  .header-mobile-view-item {
+    display: none;
+  }
+  .main-block {
+    height: calc(100vh - 105px);
+    min-height: 535px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .custom-width {
+    width: 100%;
+  }
+  .appliances-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .brand-list {
+    grid-template-columns: repeat(4, 1fr);
+
+    img {
+      width: 50px;
+    }
+  }
+  .reasons-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .appliance-card {
+    width: 110px;
+  }
+
+  .main-title {
+    font-size: 20px;
+    line-height: 125%;
+    padding-top: 36px;
+  }
+  .result-list {
+    flex-direction: column;
+  }
+  .footer-row {
+    grid-template-columns: 1fr;
+  }
+
+  // MAIN
+
+  .main-subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 20px;
+    line-height: 20px;
+    padding: 0 50px;
+  }
+
+  .price-block {
+    margin: 24px auto 0;
+    width: min-content;
+    min-width: 240px;
+    padding: 0 40px 0;
+    height: 196px;
+  }
+
+  .price-block-price {
+    font-size: 85px;
+    line-height: 110px;
+  }
+
+  .price-block-title {
+    font-size: 19px;
+    line-height: 28px;
+  }
+
+  .price-block-subtitle {
+    font-size: 13px;
+    line-height: 120%;
+  }
+
+  .phone-number-mobile-view {
+    background: radial-gradient(95.93% 113.74% at 4.07% 113.74%, rgba(255, 255, 255, 0.2975) 0%, rgba(255, 255, 255, 0.034) 100%);
+    backdrop-filter: blur(12px);
+    border-radius: 9px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    width: 100%;
+    max-width: 240px;
+    margin: 10px auto 0;
+    height: 42px;
+
+    img {
+      margin-right: 12px;
+    }
+  }
+
+  .book-btn {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
+  .work-time {
+    margin-bottom: 10px;
+    margin-top: 40px;
+  }
+
+  .how-it-works {
+    background: unset;
+  }
+
+  .card-wrapper:last-child {
+    margin-right: 10px;
+    position: relative;
+  }
+
+  .how-it-works-title {
+    padding: 36px 0 21px;
+  }
+
+  .how-it-works-list {
+    justify-content: flex-start;
+    margin-left: 9px;
+  }
+
+  .how-it-works {
+    padding-bottom: 60px;
+  }
+
+
+  // REASON -----------------
+
+  .reasons {
+    margin: 0 10px;
+    background-image: none, url('../../../assets/img/reason-right-bg.svg');
+    padding-bottom: 0;
+  }
+
+  .reasons-title {
+    padding: 36px 0;
+    max-width: 250px;
+    margin: 0 auto;
+    line-height: 120%;
+  }
+
+  .reason-item {
+    margin-bottom: 50px;
+  }
+
+  // APPLIANCES---------------------------
+
+  .appliances-title {
+    padding: 36px 0;
+  }
+
+  .appliances-list {
+    width: 100% !important;
+    margin: 0;
+    grid-column-gap: 0;
+  }
+
+  .appliance-card {
+    width: 104px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .appliances-list {
+    padding-bottom: 60px;
+  }
+
+  .brand-title {
+    padding: 36px 0;
+  }
+
+  .brand {
+    background-image: url('../../../assets/img/brand-mobile-left-bg.png'), none;
+    padding-bottom: 68px;
+  }
+
+  .brand-list {
+    grid-row-gap: 24px;
+  }
+
+  .brand-logo img {
+    margin: 0 auto;
+
+  }
+
+  // RULES
+
+  .result-list {
+    margin-bottom: 54px;
+  }
+  .result-title {
+    padding: 36px 0 24px;
+  }
+  .result-item-text {
+    padding-bottom: 42px;
+  }
+  .result-item {
+    padding: 36px 0 0;
+    margin: 0 auto;
+    min-width: 262px;
+  }
+  .result-item + .result-item {
+    border-left: none;
+    border-top: 1.5px solid #DCDDDE;
+  }
+
+  //  LOCATION -----------------
+
+  .location-title {
+    padding: 36px 0 46px;
+  }
+
+  .location-btns {
+    overflow-x: scroll;
+  }
+
+  //  FOOTER
+
+  .footer-right {
+    margin-top: 18px;
+  }
+  .sm-links {
+    justify-content: flex-end;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #303746;
+  }
+  .contact-list {
+    margin-top: 26px;
+  }
+
+  .our-services-list {
+    grid-template-columns: 1fr;
+  }
+  .our-services-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .our-services-item {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .our-services-list {
+    margin-left: -20px;
+  }
+  .footer-row {
+    margin-right: 0;
+  }
+  .footer {
+    padding-left: 30px;
+    padding-bottom: 60px;
+
+    .custom-width {
+      width: 100%;
+    }
+  }
+  .firma {
+    margin-left: -30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-block {
+    padding: 0;
+  }
+
+  .custom-width {
+    width: 320px
+  }
+  .appliances-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .reasons-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .appliance-card {
+    width: 95px;
+  }
+  .title {
+    font-size: 23px;
+  }
+
 }
