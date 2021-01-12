@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit, ViewChild, ViewChildren} from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -6,6 +6,11 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+
+  @ViewChild('phoneNumberBtn') phoneNumberBtn: ElementRef;
+  @ViewChild('otherHeader') otherHeader: ElementRef;
+  @ViewChild('bookAppointmentMain') bookAppointmentMain: ElementRef;
+  @ViewChild('bookHeader') bookHeader: ElementRef;
 
   brandListItem = [
     {path: 'bosch.svg'},
@@ -23,17 +28,36 @@ export class MainComponent implements OnInit {
   ];
 
   location: number;
-  svg = `<path d="M26.2 39H3.8C2.21333 39 1 37.9022 1 36.4667V3.53333C1 2.09778 2.21333 1 3.8 1H26.2C27.7867 1 29 2.09778 29 3.53333V36.4667C29 37.8178 27.7867 39 26.2 39Z" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M1 15H29" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M7 7V23" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M25 39V41.5" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M5 39V41.5" stroke="#3A4151" stroke-width="1.75" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>`;
 
   constructor() {
   }
 
+  onScroll(event): void {
+    console.log(event);
+  }
 
   ngOnInit(): void {
   }
 
+  @HostListener('window:scroll', ['$event']) scroll(event): void {
+    const verticalOffset = window.pageYOffset;
+    const elPhoneNumber = this.phoneNumberBtn.nativeElement.offsetTop;
+    const elBookHeader = this.bookAppointmentMain.nativeElement.offsetTop;
+    if (verticalOffset > elPhoneNumber) {
+      this.otherHeader.nativeElement.classList.add('active');
+    } else {
+      this.otherHeader.nativeElement.classList.remove('active');
+    }
+    console.log(elBookHeader, verticalOffset);
+    if (verticalOffset > elBookHeader) {
+      this.bookHeader.nativeElement.classList.add('active');
+    } else {
+      this.bookHeader.nativeElement.classList.remove('active');
+    }
+
+  }
+
+  goTo(event?): void {
+
+  }
 }

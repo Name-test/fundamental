@@ -1,0 +1,111 @@
+.header {
+  height: 60px;
+  background: linear-gradient(277.8deg, rgba(84, 170, 217, 0.92) 0.25%, rgba(69, 181, 133, 0.88) 111.76%);
+
+  img {
+    margin-left: 15%;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 33px;
+  line-height: 100%;
+  text-align: center;
+  color: #3A4151;
+  margin-top: 60px;
+  margin-bottom: 54px;
+}
+
+.progress-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 600px;
+  margin: 0 auto;
+}
+
+.progress-bar-item {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  text-align: center;
+  background: -webkit-linear-gradient(327.46deg, #54AAD9 -144.44%, #45B585 158.83%);;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: red;
+  position: relative;
+
+  &.active:before {
+    content: url("../../../assets/img/icon/progress-check-marker.svg");
+    position: absolute;
+    top: 0px;
+    left: -15px;
+  }
+}
+
+.progress-bar-line {
+  grid-column: 1/-1;
+  background: #F5F6F9;
+  border-radius: 10px;
+  height: 5px;
+  margin-top: 12px;
+  position: relative;
+}
+
+.progress-bar-line-active {
+  background: linear-gradient(327.46deg, #54AAD9 -144.44%, #45B585 158.83%);
+  border-radius: 15px;
+  height: 100%;
+  width: 25%;
+}
+
+.progress-bar-item-wrapper {
+  width: min-content;
+  margin: 0 auto;
+}
+
+.repair-item-title {
+  font-size: 21px;
+  line-height: 100%;
+  text-align: center;
+  color: #3A4151;
+}
+
+.repair-item-subtitle {
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  color: #6B717D;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,1 +1,121 @@
-<div></div>
+<button class="btn center" (click)="navBarStat = !navBarStat">
+  <img src="assets/img/icon/burger-menu.svg" alt="">
+</button>
+
+<div class="nav-menu" [ngClass]="{'active': navBarStat}">
+  <button class="btn center close-btn" (click)="navBarStat = !navBarStat">
+    <img src="assets/img/icon/close.svg" alt="">
+  </button>
+
+  <button class="btn call-us-btn">
+    <div style="margin-bottom: 5px" class="flex align-items-center justify-content-center">
+      <img src="assets/img/icon/phone.svg" alt="">
+      <p class="call-us">
+        CAll us now
+      </p>
+    </div>
+    <p class="mob-number">(408) 708 31 44</p>
+  </button>
+
+  <ul class="nav-list">
+    <li class="nav-list-item">
+      <p class="nav-list-item-text">
+        HOME
+      </p>
+    </li>
+    <li (click)="navItemToggle('services')" class="nav-list-item">
+
+      <div class="flex align-items-center justify-content-between">
+        <img class="nav-arrow"
+             [ngClass]="{'active' : activeNav === 'services'}"
+             src="assets/img/icon/nav-arrow-down.svg" alt=""
+        >
+        <p class="nav-list-item-text">SERVICES</p>
+      </div>
+
+      <ul [ngClass]="{'services' : activeNav === 'services'}" class="subparagraph">
+        <ng-container *ngFor="let item of servicesItems">
+          <li
+            [ngClass]="{'active' : activeServices === item.id}"
+            class="subparagraph-item"
+            (click)="setActiveSubparagraph(item.id)"
+          >{{item.text}}</li>
+        </ng-container>
+      </ul>
+
+    </li>
+    <li (click)="navItemToggle('locations')" class="nav-list-item">
+
+      <div class="flex align-items-center justify-content-between">
+        <img class="nav-arrow"
+             [ngClass]="{'active' : activeNav === 'locations'}"
+             src="assets/img/icon/nav-arrow-down.svg" alt=""
+        >
+        <p class="nav-list-item-text">LOCATIONS</p>
+      </div>
+
+      <ul [ngClass]="{'locations' : activeNav === 'locations'}" class="subparagraph">
+        <ng-container *ngFor="let item of locationItems">
+          <li
+            [ngClass]="{'active' : activeLocation === item.id}"
+            class="subparagraph-item"
+            (click)="setActiveLocationSubparagraph(item.id)"
+          >{{item.text}}</li>
+        </ng-container>
+      </ul>
+
+    </li>
+    <li (click)="navItemToggle('language')" class="nav-list-item">
+
+      <div class="flex align-items-center justify-content-between">
+        <img class="nav-arrow"
+             [ngClass]="{'active' : activeNav === 'language'}"
+             src="assets/img/icon/nav-arrow-down.svg" alt=""
+        >
+        <p class="nav-list-item-text">LANGUAGE</p>
+      </div>
+
+      <ul [ngClass]="{'language' : activeNav === 'language'}" class="subparagraph">
+        <ng-container *ngFor="let item of languageItems">
+          <li
+            [ngClass]="{'active' : activeLanguage === item.id}"
+            class="subparagraph-item"
+            (click)="setActiveLanguage(item.id)"
+          >{{item.text}}</li>
+        </ng-container>
+      </ul>
+
+    </li>
+  </ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
