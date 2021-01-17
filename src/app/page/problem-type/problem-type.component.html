@@ -1,0 +1,69 @@
+<header class="header flex align-items-center">
+  <img src="assets/img/icon/white-logo.svg" alt="">
+</header>
+
+<h1 class="title">
+  Book Repair Appointment
+</h1>
+
+<div class="progress-bar justify-content-center">
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item active">Product</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Date</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Location</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Contact</p>
+  </div>
+
+  <div class="progress-bar-line">
+    <div class="progress-bar-line-active">
+      <!--PROGRESS BAR-->
+    </div>
+  </div>
+</div>
+
+<p class="quiz-title">
+  So, what seems to be the problem?
+</p>
+<p class="quiz-subtitle">
+  Please select the issue
+</p>
+
+<ul class="problem-list width">
+
+  <ng-container *ngFor="let problem of problems">
+
+    <li>
+      <label [for]="problem.text" class="problem-type flex align-items-center">
+        <input [id]="problem.text" type="checkbox">
+
+        <span class="checkbox center">
+          <img class="check-mark" src="assets/img/icon/checkmark-white.svg" alt="">
+        </span>
+
+        {{problem.text}}
+      </label>
+    </li>
+
+  </ng-container>
+
+</ul>
+
+
+
+
+
+
+<footer class="footer center">
+  <button class="btn footer-btn-back">Back</button>
+  <button class="btn footer-btn-submit" [routerLink]="'/issue-in-detail'">Continue</button>
+</footer>

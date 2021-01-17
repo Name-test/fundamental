@@ -1,0 +1,60 @@
+<header class="header flex align-items-center">
+  <img src="assets/img/icon/white-logo.svg" alt="">
+</header>
+
+<h1 class="title">
+  Book Repair Appointment
+</h1>
+
+<div class="progress-bar justify-content-center">
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item active">Product</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Date</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Location</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Contact</p>
+  </div>
+
+  <div class="progress-bar-line">
+    <div class="progress-bar-line-active">
+      <!--PROGRESS BAR-->
+    </div>
+  </div>
+</div>
+
+<p class="quiz-title">
+  Please tell us contact info
+</p>
+
+<div class="inputs-list width">
+
+  <div class="double-input">
+    <input [(ngModel)]="firstName" placeholder="First Name" type="text" class="input">
+    <input [(ngModel)]="secondName" placeholder="Last Name" type="text" class="input">
+  </div>
+
+  <input [(ngModel)]="email" placeholder="Email" type="text" class="input">
+  <input [(ngModel)]="phone" placeholder="Phone" type="text" class="input">
+
+  <label for="privacy" class="checkbox-label flex align-items-center">
+    <input [(ngModel)]="privacy" id="privacy" class="checkbox" type="checkbox">
+    <span class="check-marker center">
+      <img src="assets/img/icon/checkmark-white.svg" alt="">
+    </span>
+    <p>Privacy Policy</p>
+  </label>
+</div>
+
+<footer class="footer center">
+  <button class="btn footer-btn-back">Back</button>
+  <button class="btn footer-btn-submit" [routerLink]="'/successful-confirmation'">Continue</button>
+</footer>
