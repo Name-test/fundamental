@@ -86,89 +86,72 @@
   margin-top: 66px;
 }
 
-.quiz-subtitle {
-  font-size: 16px;
-  line-height: 100%;
-  text-align: center;
-  color: #6B717D;
-  margin-top: 15px;
-}
-
 .width {
   width: 100%;
   max-width: 810px;
   margin: 0 auto;
 }
 
-// --------
+// ----------------
 
-.appliance-card {
-  border: 1.5px solid #EFEFEF;
-  border-radius: 15px;
-  padding: 22px 15px;
-  width: 120px;
-  cursor: pointer;
-  margin: 0 auto 18px;
-
-  &:hover {
-    background: linear-gradient(327.46deg, #54AAD9 -144.44%, #45B585 158.83%);
-  }
-
-  &:hover path {
-    stroke: #fff;
-  }
-
-  &:hover .appliance-title {
-    color: #FFFFFF;
-  }
-}
-
-.appliance-card-img-wrapper {
-  height: 40px;
-  margin-bottom: 18px;
-}
-
-.appliance-img {
-  margin: 0 auto 21px;
-  display: block;
-}
-
-.appliance-title {
-  font-size: 14px;
-  line-height: 130%;
-  text-align: center;
-  color: #3A4151;
-}
-
-.appliances-list {
-  flex-wrap: wrap;
+.inputs-list {
   margin-top: 54px;
 }
 
-// ---------
-
-.footer {
-  box-shadow: 0px -5px 25px rgba(0, 0, 0, 0.05);
-  height: 140px;
-}
-
-.disabled {
-  background: #EFEFEF;
-  color: #C4C6CA;
-  border: none;
-}
-
-.footer-btn-back {
-  min-width: 144px;
-  height: 42px;
-  border: 1.5px solid #3A4151;
+.input {
+  width: 100%;
+  height: 54px;
+  background: #FFFFFF;
+  border: 1.5px solid #EFEFEF;
   box-sizing: border-box;
-  border-radius: 9px;
+  border-radius: 45px;
+  margin-bottom: 18px;
+  padding-left: 24px;
+  font-size: 15px;
+  line-height: 100%;
+  color: #3A4151;
 
-  &:disabled {
-    @extend .disabled;
+  &::placeholder {
+    color: #6B717D;
   }
 }
+
+.zip-code {
+  position: absolute;
+  top: 14px;
+  right: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
