@@ -43,12 +43,13 @@ export class MainComponent implements OnInit {
     const verticalOffset = window.pageYOffset;
     const elPhoneNumber = this.phoneNumberBtn.nativeElement.offsetTop;
     const elBookHeader = this.bookAppointmentMain.nativeElement.offsetTop;
+
     if (verticalOffset > elPhoneNumber) {
       this.otherHeader.nativeElement.classList.add('active');
     } else {
       this.otherHeader.nativeElement.classList.remove('active');
     }
-    console.log(elBookHeader, verticalOffset);
+    
     if (verticalOffset > elBookHeader) {
       this.bookHeader.nativeElement.classList.add('active');
     } else {

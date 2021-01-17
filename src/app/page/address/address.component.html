@@ -1,0 +1,52 @@
+<header class="header flex align-items-center">
+  <img src="assets/img/icon/white-logo.svg" alt="">
+</header>
+
+<h1 class="title">
+  Book Repair Appointment
+</h1>
+
+<div class="progress-bar justify-content-center">
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item active">Product</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Date</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Location</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Contact</p>
+  </div>
+
+  <div class="progress-bar-line">
+    <div class="progress-bar-line-active">
+      <!--PROGRESS BAR-->
+    </div>
+  </div>
+</div>
+
+<p class="quiz-title">
+  Where shall we send your technician?
+</p>
+
+<div class="width inputs-list">
+
+  <div style="position: relative">
+    <input [(ngModel)]="zip" placeholder="ZIP Code" type="text" class="input">
+    <p class="zip-code">{{zip}}</p>
+  </div>
+  <input placeholder="Street Adress" type="text" class="input">
+  <input placeholder="ADT/Suite/Unit Number" type="text" class="input">
+
+</div>
+
+<footer class="footer center">
+  <button class="btn footer-btn-back">Back</button>
+  <button class="btn footer-btn-submit" [routerLink]="'/contact-info'">Continue</button>
+</footer>

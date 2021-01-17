@@ -1,0 +1,73 @@
+<header class="header flex align-items-center">
+  <img src="assets/img/icon/white-logo.svg" alt="">
+</header>
+
+<h1 class="title">
+  Book Repair Appointment
+</h1>
+
+<div class="progress-bar justify-content-center">
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item active">Product</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Date</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Location</p>
+  </div>
+
+  <div class="progress-bar-item-wrapper">
+    <p class="progress-bar-item">Contact</p>
+  </div>
+
+  <div class="progress-bar-line">
+    <div class="progress-bar-line-active">
+      <!--PROGRESS BAR-->
+    </div>
+  </div>
+</div>
+
+<p class="quiz-title">
+  So, what seems to be the problem?
+</p>
+<p class="quiz-subtitle">
+  Please select the issue
+</p>
+
+<div class="brands-container width">
+
+  <div class="brand-input-container flex align-items-center">
+    <img src="assets/img/icon/input-search.svg" alt="">
+    <input (input)="filter()" [(ngModel)]="filterValue" placeholder="Search Brand" class="brand-input" type="text">
+  </div>
+
+  <ul class="brand-list">
+
+    <ng-container *ngFor="let brand of brandsList; let i = index">
+      <li
+        (click)="selectedBrand = brand"
+        *ngIf="i < limitItems"
+        class="brand-item"
+        [ngClass]="{'active' : selectedBrand === brand}"
+      >
+        {{brand.brand}}
+      </li>
+    </ng-container>
+
+
+    <button (click)="limitToggle()" *ngIf="brandsList.length > 5" class="brand-item btn center plus-btn">
+      <img src="assets/img/icon/plus.svg" alt="">
+    </button>
+
+  </ul>
+
+</div>
+
+<footer class="footer center">
+  <button class="btn footer-btn-back">Back</button>
+  <button type="button" class="btn footer-btn-submit" [routerLink]="'/problem-type'">Continue</button>
+</footer>

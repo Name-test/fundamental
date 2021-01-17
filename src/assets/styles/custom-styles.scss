@@ -92,3 +92,37 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
+
+
+.footer {
+  box-shadow: 0px -5px 25px rgba(0, 0, 0, 0.05);
+  height: 90px;
+}
+
+.disabled {
+  background: #EFEFEF;
+  color: #C4C6CA;
+  border: none;
+}
+
+.footer-btn-back {
+  min-width: 144px;
+  height: 42px;
+  border: 1.5px solid #3A4151;
+  box-sizing: border-box;
+  border-radius: 9px;
+
+  &:disabled {
+    @extend .disabled;
+  }
+}
+
+.footer-btn-submit {
+  background: #FEA520;
+  border-radius: 9px;
+  color: #FFFFFF;
+  min-width: 144px;
+  height: 42px;
+  margin-left: 15px;
+}
