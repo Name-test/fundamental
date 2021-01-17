@@ -1,2 +1,384 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'assets/styles/custom-styles';
+
+
+@media (max-width: 992px) {
+  .custom-width {
+    width: 650px;
+  }
+  .appliances-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .reasons-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 890px) {
+  .custom-width {
+    width: 650px;
+  }
+  .appliances-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .reasons-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .custom-width {
+    width: 560px;
+  }
+  .appliances-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .reasons-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .appliance-card {
+    width: 110px;
+  }
+  .how-it-works-list {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    height: 54px;
+  }
+  .header-container {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 10;
+  }
+  .book-btn-header {
+    display: none !important;
+  }
+  .mobile-other-header {
+    display: block;
+    height: 0;
+    overflow-y: hidden;
+    background: #3A4151;
+    width: 100vw;
+    z-index: 10;
+    top: 0;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    color: #FFFFFF;
+
+    img {
+      margin-right: 8px;
+    }
+
+    span {
+      position: relative;
+      top: -2px;
+    }
+
+    &.active {
+      height: 30px;
+    }
+  }
+  app-mobile-nav-menu {
+    display: block;
+  }
+  .main-logo {
+    display: none;
+  }
+  .mobile-view-logo {
+    display: block;
+  }
+  .header-mobile-view-item {
+    display: none;
+  }
+  .main-block {
+    height: calc(100vh - 105px);
+    min-height: 535px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 54px;
+  }
+  .custom-width {
+    width: 100%;
+  }
+  .appliances-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .brand-list {
+    grid-template-columns: repeat(4, 1fr);
+
+    img {
+      width: 50px;
+    }
+  }
+  .reasons-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .appliance-card {
+    width: 110px;
+  }
+  .main-title {
+    font-size: 20px;
+    line-height: 125%;
+    padding-top: 50px;
+  }
+  .result-list {
+    flex-direction: column;
+  }
+  .footer-row {
+    grid-template-columns: 1fr;
+  }
+
+  // MAIN
+
+  .main-subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 20px;
+    line-height: 20px;
+    padding: 0 50px;
+  }
+
+  .price-block {
+    margin: 24px auto 0;
+    width: min-content;
+    min-width: 240px;
+    padding: 0 40px 0;
+    height: 196px;
+  }
+
+  .price-block-price {
+    font-size: 85px;
+    line-height: 110px;
+  }
+
+  .price-block-title {
+    font-size: 19px;
+    line-height: 28px;
+  }
+
+  .price-block-subtitle {
+    font-size: 13px;
+    line-height: 120%;
+  }
+
+  .phone-number-mobile-view {
+    background: radial-gradient(95.93% 113.74% at 4.07% 113.74%, rgba(255, 255, 255, 0.2975) 0%, rgba(255, 255, 255, 0.034) 100%);
+    backdrop-filter: blur(12px);
+    border-radius: 9px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    width: 100%;
+    max-width: 240px;
+    margin: 10px auto 0;
+    height: 42px;
+
+    img {
+      margin-right: 12px;
+    }
+  }
+
+  .book-btn {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
+  .work-time {
+    margin-bottom: 10px;
+    margin-top: 40px;
+  }
+
+  .how-it-works {
+    background: unset;
+  }
+
+  .card-wrapper:last-child {
+    margin-right: 10px;
+    position: relative;
+  }
+
+  .how-it-works-title {
+    padding: 36px 0 21px;
+  }
+
+  .how-it-works-list {
+    justify-content: flex-start;
+    margin-left: 9px;
+  }
+
+  .how-it-works {
+    padding-bottom: 60px;
+  }
+
+
+  // REASON -----------------
+
+  .reasons {
+    margin: 0 10px;
+    background-image: none, url('assets/img/reason-right-bg.svg');
+    padding-bottom: 0;
+  }
+
+  .reasons-title {
+    padding: 36px 0;
+    max-width: 250px;
+    margin: 0 auto;
+    line-height: 120%;
+  }
+
+  .reason-item {
+    margin-bottom: 50px;
+  }
+
+  // APPLIANCES---------------------------
+
+  .appliances-title {
+    padding: 36px 0;
+  }
+
+  .appliances-list {
+    width: 100% !important;
+    margin: 0;
+    grid-column-gap: 0;
+  }
+
+  .appliance-card {
+    width: 104px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .appliances-list {
+    padding-bottom: 60px;
+  }
+
+  .brand-title {
+    padding: 36px 0;
+  }
+
+  .brand {
+    background-image: url('assets/img/brand-mobile-left-bg.png'), none;
+    padding-bottom: 68px;
+  }
+
+  .brand-list {
+    grid-row-gap: 24px;
+  }
+
+  .brand-logo img {
+    margin: 0 auto;
+
+  }
+
+  // RULES
+
+  .result-list {
+    margin-bottom: 54px;
+  }
+  .result-title {
+    padding: 36px 0 24px;
+  }
+  .result-item-text {
+    padding-bottom: 42px;
+  }
+  .result-item {
+    padding: 36px 0 0;
+    margin: 0 auto;
+    min-width: 262px;
+  }
+  .result-item + .result-item {
+    border-left: none;
+    border-top: 1.5px solid #DCDDDE;
+  }
+
+  //  LOCATION -----------------
+
+  .location-title {
+    padding: 36px 0 46px;
+  }
+
+  .location-btns {
+    overflow-x: scroll;
+  }
+
+  //  FOOTER
+
+  .footer-right {
+    margin-top: 18px;
+  }
+  .sm-links {
+    justify-content: flex-end;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #303746;
+  }
+  .contact-list {
+    margin-top: 26px;
+  }
+
+  .our-services-list {
+    grid-template-columns: 1fr;
+  }
+  .our-services-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .our-services-item {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .our-services-list {
+    margin-left: -20px;
+  }
+  .footer-row {
+    margin-right: 0;
+  }
+  .footer {
+    padding-left: 30px;
+    padding-bottom: 60px;
+
+    .custom-width {
+      width: 100%;
+    }
+  }
+  .firma {
+    margin-left: -30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-block {
+    padding: 0;
+  }
+
+  .custom-width {
+    width: 320px
+  }
+  .appliances-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .reasons-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .appliance-card {
+    width: 95px;
+  }
+  .title {
+    font-size: 23px;
+  }
+
+}
